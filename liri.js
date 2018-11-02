@@ -88,14 +88,18 @@ function getMovie() {
             console.log("Plot: " + JSON.parse(body).Plot);
             console.log("Actors: " + JSON.parse(body).Actors);
             console.log("==============");
-        } else {
-            // * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
-            console.log("==============");
-            console.log("If you haven't watched 'Mr. Nobody,' then you should: <http://www.imdb.com/title/tt0485947/>");
-            console.log("It's on Netflix!");
-            console.log("==============");
-        }
+        
+    }
+         
     });
+
+    // if (!movie){
+
+    //     console.log("==============");
+    //     console.log("If you haven't watched 'Mr. Nobody,' then you should: <http://www.imdb.com/title/tt0485947/>");
+    //     console.log("It's on Netflix!");
+    //     console.log("==============");
+    // }
 
 
 }
@@ -107,6 +111,8 @@ function doWhatItSays(){
     fs.readFile(random, "utf8",  (error, data) => {
         if  (error) throw error 
        
+        console.log(data)
+
         let splitData = data.split(",");
 
         splitData.forEach((item) =>{
